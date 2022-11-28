@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='{%static "css/style.css" %}'>
+    <link rel="stylesheet" href='{%static "css/all.min.css" %}'>
+    <title>Listado Docente</title>
+</head>
+<body class="body-home">
+    <header class="header">
+        <a href="../" class="header-logo">
+            <img src="{%static 'assets/logo.jpg' %}">
+            <!-- <img src="assets/logos.jpeg"> -->
+        </a>
+        <h1 class="header-titulo">LISTA DE DOCENTES</h1>
+        <ul>
+            <li><a id="font-plus"><i class="fa-solid fa-magnifying-glass-plus"></i></a></li>
+            <li><a id="switch-mode"><i class="fa-solid fa-cloud-sun"></i></a></li>
+            <li><a href="../agregarDocentes" class="btn" >Agregar Docente</a></li>
+            {% comment %} <li><a href="../"><i class="fa-solid fa-arrow-right-from-bracket"></i></a></li> {% endcomment %}
+        </ul>
+    </header>
+
+    <main class="home-main">
+        <!-- TABLA -->
+        <section class="main-tabla">
+            {%if docentes %}
+            <table class="tabla-productos" id="tabla-productos">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fono</th>
+                    <th>Nivel Academico</th>
+                    <th>Cursos Asignados</th>
+                    <th>Especialidad</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {% for docente in docentes %}
+                  <tr>
+                    <td scope='row' >{{ docente.id }}</td>
+                    <td>{{ docente.nombre }}</td>
+                    <td>{{ docente.apellido }}</td>
+                    <td>{{ docente.fono }}</td>
+                    <td>{{ docente.nivelAcademico }}</td>
+                    <td>{{ docente.cursosAsignados }}</td>
+                    <td>{{ docente.especialidad }}</td>
+                    <td><a href="/actualizarDocentes/{{docente.id}}" class='btn' ><i class="fa-solid fa-pen-to-square"></i></a></td>
+                    <td><a href="/eliminarDocentes/{{docente.id}}" class='btn' ><i class="fa-solid fa-trash"></a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div role="alert" >
+              <strong>NO SE ENCONTRO NINGUN DOCENTE</strong>
+            </div>
+            {% endif %}
+        </section>
+    </main>
+</body>
+<script src='{%static "js/index.js" %}'></script>
+</html>

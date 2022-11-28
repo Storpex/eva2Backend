@@ -1,0 +1,257 @@
+
+
+
+/* ==================== GENERAL ==================== */
+/* ==================== GENERAL ==================== */
+/* ==================== GENERAL ==================== */
+/* ==================== GENERAL ==================== */
+
+/*
+BLANCO = #FCFBFC
+NEGRO = #000
+VERDE = #1A936F
+ROJO = #C42021
+AZUL = #41658A
+GRIS = #ced4da
+GRIS OSCURO = #ced4da
+*/
+
+
+/* :root{
+    --blanco-claro: #FCFBFC;
+    --blanco-oscuro: #EFEFEF;
+    --negro: #000;
+    --verde-normal: #1A936F;
+    --verde-claro: #2da17e;
+    --rojo: #C42021;
+    --azul: #41658A;
+    --gris: #ced4da;
+    --gris-oscuro: #979797;
+} */
+
+:root{
+    --white-color: #FCFBFC;
+    --background-color: #EFEFEF;
+    --dark: #000;
+    --primary-color: #1A936F;
+    --primary-color-light: #2da17e;
+    --info-color: #C42021;
+    --contraste-color: #41658A;
+    --gris-oscuro: #979797;
+}
+
+.dark-mode{
+    --background-color: #222222;
+    color: #FCFBFC;
+}
+
+.add-font{
+    font-size: 20px;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.body-main{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+
+/* ==================== HEADER ==================== */
+
+.header{
+    display: grid ;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: var(--dark);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.header-logo img{
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    width: 4.3em;
+    margin-left: 2em;
+}
+
+.header-titulo{
+    grid-column: 2;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2em;
+    color: var(--white-color);
+}
+
+/* ==================== BOTON ==================== */
+
+.btn{
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    cursor: pointer;
+    border: none;
+    padding: 0.5em 1em;
+}
+
+.btn:hover{
+    background-color: var(--primary-color);
+}
+
+
+/* ==================== "ERROR" ==================== */
+
+.formulario div{
+    padding: 0.3em 0 1.5em 0;
+    text-align: center;
+}
+
+#errorUsuario{
+    font-weight: 600;
+    font-size: 0.8em;
+    color: var(--info-color);
+}
+
+#errorContrasenia{
+    font-weight: 600;
+    font-size: 0.8em;
+    color: var(--info-color);
+}
+
+/* ==================== HOME ==================== */
+/* ==================== HOME ==================== */
+/* ==================== HOME ==================== */
+/* ==================== HOME ==================== */
+
+/* ==================== MAIN ==================== */
+
+.body-home{
+    background-color: var(--background-color);
+}
+
+.home-main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+/* ==================== SECTION FUNCIONES ==================== */
+
+.main-funciones{
+    margin: 3em 0;
+    padding: 1em 15em;
+    border-bottom: 1px solid var(--contraste-color);
+    border-top: 1px solid var(--contraste-color);
+}
+
+.main-funciones h2{
+    text-align: center;
+    margin-bottom: 0.8em;
+    text-decoration: underline;
+    text-decoration-color: var(--primary-color);
+}
+
+.btnEnviar{
+    display: flex;
+    justify-content: center;
+}
+
+/* ==================== SECTION TABLA ==================== */
+
+.formData{
+    display: flex;
+    align-items: center;
+}
+
+.main-tabla{
+    margin: 1em 0;
+}
+
+.tabla-productos{
+    /* border: 2px solid var(--primary-color); */
+    border-collapse: collapse;
+}
+
+.tabla-productos thead{
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.tabla-productos td, th{
+    text-align: center;
+    padding: 12px;
+}
+
+.tabla-productos tr:nth-child(even){
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+
+ul{
+    display: flex;
+    margin-right: 2em;
+    justify-content: end;
+    list-style: none;
+}
+
+ul li{
+    margin-right: 1em;
+}
+
+ul a{
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+#id_nombre{
+    width: 90%;
+    height: 2em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: var(--white-color);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--gris-oscuro);
+}
+
+.fInput2{
+    width: 90%;
+    height: 2em;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: var(--white-color);
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--gris-oscuro);
+}
+
+.fInput2:focus{
+    border-bottom: 2px solid var(--primary-color);
+}
+
+
+a {
+    cursor: pointer;
+}
+
+a:hover{
+    color: var(--info-color);
+}
+
+
